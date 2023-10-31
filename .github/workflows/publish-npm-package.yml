@@ -11,10 +11,12 @@ jobs:
         with:
           node-version: 12
           cache-dependency-path: './sample-packages/npm/package-lock.json'
-      - run: npm ci
+      - name: Run NPM operations
         working-directory: './sample-packages/npm'
-      - run: npm test
-        working-directory: './sample-packages/npm'
+        run: | 
+          npm install
+          npm ci
+          npm test
 
   publish-gpr:
     needs: build
@@ -26,9 +28,11 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           cache-dependency-path: './sample-packages/npm/package-lock.json'
-      - run: npm ci
+      - name: Run NPM operations
         working-directory: './sample-packages/npm'
-      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        working-directory: './sample-packages/npm'
+        run: | 
+          npm install
+          npm ci
+          npm publish
