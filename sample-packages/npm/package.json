@@ -1,3 +1,8 @@
 {
-  "name": "test npm package"
+  "name": "sample-packages-npm"
+  "version": "1.0.0",
+  "description": "test npm packages",
+  "main": "index.js",
+  "author": "luthfi25",
+  "license": "MIT"
 }
