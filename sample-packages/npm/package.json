@@ -1,5 +1,5 @@
 {
-  "name": "sample-packages-npm"
+  "name": "sample-packages-npm",
   "version": "1.0.0",
   "description": "test npm packages",
   "main": "index.js",
